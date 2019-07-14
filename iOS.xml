@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Client name="tvOS">
+<Client name="iOS">
   <!-- Author: Plex Inc. -->
-  <!-- This profile is used by A10X-based tvOS (Apple TV 4K) devices using the MPV ("experimental") video player. Currently, this requires a Plex Pass subscription. -->
+  <!-- This profile is used by A10X (and later) iOS (2017+) devices using the MPV ("experimental") video player. Currently, this requires a Plex Pass subscription. -->
   <!-- Because Plex does not currently support TrueHD or DTS-MA playback in the client, this audio is transcoded to FLAC. -->  
   <Settings>
     <Setting name="DirectPlayStreamSelection" value="true" />
@@ -31,7 +31,7 @@
     </VideoCodec>
     <VideoAudioCodec name="*">
       <Limitations>
-        <UpperBound name="audio.channels" value="8" />
+        <UpperBound name="audio.channels" value="2" onlyTranscodes="true" />
       </Limitations>
     </VideoAudioCodec>
   </CodecProfiles>

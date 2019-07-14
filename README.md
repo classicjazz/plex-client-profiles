@@ -3,6 +3,7 @@ In this repository are my custom XML files for Plex.
 Currently, these include:
 
 * an Apple TV 4K custom profile
+* an iPad Pro (A10X and later) custom profile
 
 To use a profile, you should place the XML file in the Profiles directory of your Plex Media Server's configuration files. If there is no existing Profiles folder, then you need to create it. For example, on a Synology NAS, the location of the folder should be: 
 
