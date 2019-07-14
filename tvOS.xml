@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Client name="tvOS">
   <!-- Author: Plex Inc. -->
-  <!-- This profile is used by A10-based tvOS (Apple TV 4K) devices -->
+  <!-- This profile is used by A10-based tvOS (Apple TV 4K) devices with using the MPV ("experimental") video player -->
   <Settings>
     <Setting name="DirectPlayStreamSelection" value="true" />
     <Setting name="StreamUnselectedIncompatibleAudioStreams" value="true" />
   </Settings>
   <TranscodeTargets>
-    <VideoProfile protocol="hls" container="mpegts" codec="h264" audioCodec="aac,eac3,ac3,mp3" context="streaming" />
-    <MusicProfile container="mp3" codec="mp3" />
+    <VideoProfile protocol="hls" container="mpegts" codec="h264" audioCodec="flac" context="streaming" />
+    <MusicProfile container="flac" codec="flac" />
     <PhotoProfile container="jpeg" />
     <SubtitleProfile protocol="hls" container="webvtt" subtitleCodec="webvtt"/>
   </TranscodeTargets>
   <DirectPlayProfiles>
-    <VideoProfile container="mp4,m4v" codec="hevc,h265,h264,mpeg4" audioCodec="aac,he-aac,ac3,eac3,flac" subtitleCodec="mov_text,tx3g,ttxt,text" />
-    <!-- Since tvOS may have issues direct playing mov/eac3 it has its own profile  -->
-    <VideoProfile container="mov" codec="hevc,h265,h264,mpeg4" audioCodec="aac,he-aac,ac3,flac" subtitleCodec="mov_text,tx3g,ttxt,text" />
-    <!-- Allow Direct Play of HLS content  -->
+    <VideoProfile container="mp4,m4v,mov" codec="hevc,h265,h264,mpeg4" audioCodec="aac,he-aac,ac3,eac3,flac" subtitleCodec="mov_text,tx3g,ttxt,text" />
     <VideoProfile protocol="hls" container="mpegts" codec="h264" audioCodec="aac,he-aac,ac3,eac3,flac" />
     <MusicProfile container="mp3" codec="mp3" />
-    <MusicProfile container="mp4" codec="aac,he-aac,ac3,eac3,flac" />
+    <MusicProfile container="m4a" codec="aac,alac" />
+    <MusicProfile container="mp4" codec="aac,he-aac,ac3,eac3,alac,flac" />
+    <MusicProfile container="flac" codec="flac" />
     <PhotoProfile container="jpeg" />
   </DirectPlayProfiles>
   <CodecProfiles>
