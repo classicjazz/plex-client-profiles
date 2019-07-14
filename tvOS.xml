@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Client name="tvOS">
+  <!-- Author: Plex Inc. -->
+  <!-- This profile is used by A10-based tvOS (Apple TV 4K) devices -->
+  <Settings>
+    <Setting name="DirectPlayStreamSelection" value="true" />
+    <Setting name="StreamUnselectedIncompatibleAudioStreams" value="true" />
+  </Settings>
+  <TranscodeTargets>
+    <VideoProfile protocol="hls" container="mpegts" codec="h264" audioCodec="aac,eac3,ac3,mp3" context="streaming" />
+    <MusicProfile container="mp3" codec="mp3" />
+    <PhotoProfile container="jpeg" />
+    <SubtitleProfile protocol="hls" container="webvtt" subtitleCodec="webvtt"/>
+  </TranscodeTargets>
+  <DirectPlayProfiles>
+    <VideoProfile container="mp4,m4v" codec="hevc,h265,h264,mpeg4" audioCodec="aac,he-aac,ac3,eac3,flac" subtitleCodec="mov_text,tx3g,ttxt,text" />
+    <!-- Since tvOS may have issues direct playing mov/eac3 it has its own profile  -->
+    <VideoProfile container="mov" codec="hevc,h265,h264,mpeg4" audioCodec="aac,he-aac,ac3,flac" subtitleCodec="mov_text,tx3g,ttxt,text" />
+    <!-- Allow Direct Play of HLS content  -->
+    <VideoProfile protocol="hls" container="mpegts" codec="h264" audioCodec="aac,he-aac,ac3,eac3,flac" />
+    <MusicProfile container="mp3" codec="mp3" />
+    <MusicProfile container="mp4" codec="aac,he-aac,ac3,eac3,flac" />
+    <PhotoProfile container="jpeg" />
+  </DirectPlayProfiles>
+  <CodecProfiles>
+    <VideoCodec name="hevc">
+     <Limitations>
+       <UpperBound name="video.width" value="3840" isRequired="true" />
+       <UpperBound name="video.height" value="2160" isRequired="true" />
+       <UpperBound name="video.bitDepth" value="10" />
+     </Limitations>
+   </VideoCodec>
+   <VideoCodec name="h265">
+      <Limitations>
+        <UpperBound name="video.width" value="3840" isRequired="true" />
+        <UpperBound name="video.height" value="2160" isRequired="true" />
+        <UpperBound name="video.bitDepth" value="10" />
+      </Limitations>
+   </VideoCodec>
+  <VideoCodec name="*">
+     <Limitations>
+       <UpperBound name="video.width" value="3840" />
+       <UpperBound name="video.height" value="2160" />
+     </Limitations>
+    </VideoCodec>
+    <VideoAudioCodec name="*">
+      <Limitations>
+        <UpperBound name="audio.channels" value="8" />
+      </Limitations>
+    </VideoAudioCodec>
+  </CodecProfiles>
+</Client>
