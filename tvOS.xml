@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Client name="tvOS">
-	<!-- This profile is used by A10X-based tvOS (Apple TV 4K) devices with the MPV ("experimental") video player.
+	<!-- This profile is used by A10X-based tvOS (Apple TV 4K) devices with the MPV ("experimental") video player. For more details, please see: https://freetime.mikeconnelly.com/archives/8172
  	Transcoding assumptions: 
 	 	container format: mkv because it supports most video/audio codecs & subtitles
-	 	video codec: keep in native formats (e.g. h264,h265,vc1)
-	 	audio codec: if not supported natively by Apple TV (e.g. lossless codecs like TrueHD or DTS-MA, then transcode to FLAC
-	 	neither container nor audio codec transcoding have material impact on performance
+	 	video codec: keep in native formats to avoid quality loss and CPU load (e.g. h264,h265,vc1)
+	 	audio codec: if a codec is not supported natively by Apple TV (e.g. lossless codecs like TrueHD or DTS-MA, then transcode to FLAC 
+	 	(neither container nor lossless audio codec transcoding have material impact on performance)
 	-->  
   <TranscodeTargets>
     <VideoProfile container="mkv" codec="h264,h265,hevc,mpeg2video,mpeg4,vc1" audioCodec="flac" subtitleCodec="ass,dvb_subtitle,vobsub,eia_608,pgs,microdvd,movtext,ssa,srt" />
     <MusicProfile container="flac" codec="flac" />
     <PhotoProfile container="jpeg" />
-    <SubtitleProfile container="webvtt" subtitleCodec="webvtt"/>
   </TranscodeTargets>
   <DirectPlayProfiles>
     <VideoProfile container="mkv,mov,mp4,mpegts,mpeg,mpegvideo,avi,flv,ogg" codec="h264,h265,hevc,vp9,h263,mpeg1video,mpeg2video,mpeg4,vc1" audioCodec="aac,ac3,alac,flac" subtitleCodec="ass,dvb_subtitle,vobsub,eia_608,pgs,microdvd,movtext,ssa,srt" />
