@@ -3,14 +3,10 @@
 	<!-- This profile is used by A10X-based tvOS (Apple TV 4K) devices with the MPV ("experimental") video player.
  	Transcoding assumptions: 
 	 	container format: mkv because it supports most video/audio codecs & subtitles
-	 	video codec: keep native h264,h265,vc1
+	 	video codec: keep in native formats (e.g. h264,h265,vc1)
 	 	audio codec: if not supported natively by Apple TV (e.g. lossless codecs like TrueHD or DTS-MA, then transcode to FLAC
 	 	neither container nor audio codec transcoding have material impact on performance
 	-->  
-  <Settings>
-    <Setting name="DirectPlayStreamSelection" value="true" />
-    <Setting name="StreamUnselectedIncompatibleAudioStreams" value="true" />
-  </Settings>
   <TranscodeTargets>
     <VideoProfile container="mkv" codec="h264,h265,hevc,mpeg2video,mpeg4,vc1" audioCodec="flac" subtitleCodec="ass,dvb_subtitle,vobsub,eia_608,pgs,microdvd,movtext,ssa,srt" />
     <MusicProfile container="flac" codec="flac" />
