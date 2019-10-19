@@ -3,7 +3,7 @@
 	<!-- This profile is used by A10X-based tvOS (Apple TV 4K) devices with the MPV ("experimental") video player. For more details, please see: https://freetime.mikeconnelly.com/archives/8172
  	Transcoding assumptions: 
 	 	container format: mkv because it supports most video/audio codecs & subtitles
-	 	video codec: keep in native formats to avoid quality loss and CPU load (e.g. h264,h265,vc1)
+	 	video codec: keep in native formats to avoid quality loss and server CPU load associated with transcoding (e.g. h264,h265,vc1)
 	 	audio codec: if a codec is not supported natively by Apple TV (e.g. lossless codecs like TrueHD or DTS-MA, then transcode to FLAC 
 	 	(neither container nor lossless audio codec transcoding have material impact on performance)
 	-->  
